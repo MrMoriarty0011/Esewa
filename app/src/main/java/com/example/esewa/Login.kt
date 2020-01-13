@@ -1,5 +1,6 @@
 package com.example.esewa
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,6 +21,8 @@ class Login : AppCompatActivity() {
             else{
                 if(handler.login(username.text.toString(),password.text.toString())){
                     Toast.makeText(this,"Logged in successfully",Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this,DailyActivity::class.java))
+                    finish()
                 } else{
                     Toast.makeText(this,"Login Failed",Toast.LENGTH_LONG).show()
                 }
