@@ -15,6 +15,8 @@ class DailyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily)
 
+        val handler3 = DailyDatabase(this)
+
         val approaches=arrayOf("--Select--","Email","Phone","Meeting")
         val ArrayAdp = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,approaches)
         approach.adapter = ArrayAdp
@@ -42,10 +44,16 @@ class DailyActivity : AppCompatActivity() {
 
         submit.setOnClickListener {
             if (name.text.toString().isEmpty() || date.text.toString().isEmpty() || auto.text.toString().isEmpty() || activity.isEmpty() || approach.isEmpty() || participant.text.toString().isEmpty() || remarks.text.toString().isEmpty()){
+
                 Toast.makeText(this,"All fields are required",Toast.LENGTH_LONG).show()
             }
             else{
-                Toast.makeText(this,"Data submitted successfully",Toast.LENGTH_LONG).show()
+                if(handler3.insertData(name.text.toString(),date.text.toString(),auto.text.toString(),activity.toString(),approach.toString(),participant.text.toString(),remarks.text.toString())){
+                    Toast.makeText(this,"Data submitted successfully",Toast.LENGTH_LONG).show()
+                }
+                else{
+                    Toast.makeText(this,"Data submition failed",Toast.LENGTH_LONG).show()
+                }
             }
 
 
