@@ -1,5 +1,8 @@
 package com.example.esewa
 
+import android.app.DatePickerDialog
+import android.app.DatePickerDialog.OnDateSetListener
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,9 +15,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isEmpty
 import kotlinx.android.synthetic.main.activity_daily.*
+import java.util.*
 
 
 class DailyActivity : AppCompatActivity() {
+
+    val day = Calendar.DAY_OF_MONTH
+    val month = Calendar.MONTH
+    val year = Calendar.YEAR
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,6 +81,12 @@ class DailyActivity : AppCompatActivity() {
 
 
 
+
+        date.setOnClickListener {
+            DateDialog()
+        }
+
+
         marquee.setOnClickListener {
             marquee.text="Daily report of esewa fone pay private limited"
             marquee.setSingleLine()
@@ -102,5 +116,13 @@ class DailyActivity : AppCompatActivity() {
         }
 
 
+
     }
+    fun DateDialog() {
+        val listener =
+            OnDateSetListener { view, year, monthOfYear, dayOfMonth -> date.setText("$dayOfMonth/$monthOfYear/$year") }
+        val dpDialog = DatePickerDialog(this, listener, year, month, day)
+        dpDialog.show()
+    }
+
 }

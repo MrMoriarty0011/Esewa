@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-        loginR.setOnClickListener {
+        LoginR.setOnClickListener {
             startActivity(Intent(this,Login::class.java))
         }
 

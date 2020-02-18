@@ -4,193 +4,235 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DailyActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    tools:context=".DailyActivity"
+    android:background="#e8e8e3">
+
 
         <TextView
             android:id="@+id/marquee"
             android:layout_width="match_parent"
-            android:layout_height="66dp"
+            android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="#D4EEB9"
-
+            android:background="@drawable/corner"
             android:gravity="center"
-            android:text="Daily Report of eSewa"
+            android:layout_marginBottom="16dp"
+            android:text="Daily Report"
             android:textSize="20sp"
-            android:textStyle="italic" />
+            app:layout_constraintTop_toTopOf="parent"
+
+             />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/abcd"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/corner_activity"
+            android:padding="16dp"
             >
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:gravity="center"
-                android:text="Activity Name"
-                android:textSize="18dp" />
 
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="267dp"
-                android:layout_height="wrap_content"
-                android:hint="Sub"
-                android:orientation="vertical" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:gravity="center"
-                android:text="Date"
-                android:textSize="18dp" />
-
-            <EditText
-                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Sub" />
-        </LinearLayout>
+                android:layout_marginBottom="12dp"
+                android:hint="Activity Name">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp" />
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:gravity="center"
-                android:text="Client"
-                android:textSize="18dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <AutoCompleteTextView
-                android:id="@+id/auto"
-                android:layout_width="264dp"
-                android:layout_height="wrap_content"
-                android:completionThreshold="1" />
 
-        </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Activity"
-                android:textSize="18dp" />
-
-            <Spinner
-                android:id="@+id/activity"
-                android:layout_width="174dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Approach"
-                android:textSize="18dp" />
-
-            <Spinner
-                android:id="@+id/approach"
-                android:layout_width="172dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:gravity="center"
-                android:text="Participant"
-                android:textSize="18dp" />
-
-            <EditText
-                android:id="@+id/participant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Sub" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:hint="Date">
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="6mm"
-                android:gravity="center"
-                android:text="Remarks"
-                android:textSize="18dp" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/date"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Date"
+                    android:textColorHint="#A9A9A9"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="20dp" />
 
-            <EditText
-                android:id="@+id/remarks"
+                <View
+                    android:id="@+id/SplitLine_hor3"
+                    android:layout_width="match_parent"
+                    android:layout_height= "1dp"
+                    android:background="#A8A8A8"
+                    android:layout_marginBottom="1dp"/>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Sub" />
-        </LinearLayout>
+                android:hint="Client"
+                android:layout_marginBottom="12dp">
 
-        <LinearLayout
+                <AutoCompleteTextView
+
+                    android:id="@+id/auto"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="7dp">
+
+                <TextView
+                    style="@style/Theme.MaterialComponents.DayNight"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Activity"
+                    android:textSize="20dp"
+                    android:textColor="	#A9A9A9"/>
+
+                <Spinner
+                    android:id="@+id/activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/SplitLine_hor2"
+                android:layout_width="match_parent"
+                android:layout_height= "1dp"
+                android:background="#A8A8A8"
+                android:layout_marginBottom="16dp"/>
+
+
+
+            <!--<com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Gender"/>
+            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="7dp">
+
+                <TextView
+                    style="@style/Theme.MaterialComponents.DayNight"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Approach"
+                    android:textSize="20dp"
+                    android:textColor="	#A9A9A9"
+                    />
+
+                <Spinner
+                    android:id="@+id/approach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:spinnerMode="dropdown"
+
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/SplitLine_hor1"
+                android:layout_width="match_parent"
+                android:layout_height= "1dp"
+                android:background="#A8A8A8" />
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Participant">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/participant"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Remarks">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/remarks"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:backgroundTint="#5cb85c"
+            android:text="Submit" />
 
-            <Button
-                android:id="@+id/submit"
-                android:layout_width="153dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="10px"
-                android:fontFamily="sans-serif-condensed-light"
-                android:padding="12dp"
-                android:text="Submit" />
-
-            <Button
-                android:id="@+id/display"
-                android:layout_width="153dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="10px"
-                android:fontFamily="sans-serif-condensed-light"
-                android:padding="12dp"
-                android:text="Display" />
-
-
-        </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
